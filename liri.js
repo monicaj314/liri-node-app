@@ -15,7 +15,6 @@ function myTweets() {
 
 });
    client.get('statuses/user_timeline', {count: 20}, function(error, tweets, response) {
-       var tweetArray = [];
         if (error) { 
             console.log(error); 
             return;
@@ -52,7 +51,7 @@ function mySpotify() {
         console.log("\n\t!!! No song title requested. HERE'S ACE OF BASE !!!")
     }
         var songResult = data.tracks.items[0];
-        console.log("*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*\n");
+        console.log("\n*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*\n");
         console.log("\tArtist: " + songResult.artists[0].name);
         console.log("\tSong Title: " + songResult.name);
         console.log("\tPreview URL: " + songResult.preview_url);
@@ -60,7 +59,7 @@ function mySpotify() {
         console.log("\n*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*\n");
     });
 }
-
+//-------- OMDB
 function myMovie() {
     var movieTitle;
     var url; 
@@ -74,7 +73,7 @@ function myMovie() {
    
     if (input[3] == null || movieTitle == "undefined") {
             movieTitle = "mr+nobody";
-            console.log("\n\t!!! No movie title requested. HERE'S MR. NOBODY !!!");
+            console.log("\n\t!!! No movie title found. HERE'S MR. NOBODY !!!");
      } else {
          splitMovieTitle();
          movieTitle = actualTitle.join('+').replace(/\'/g, "'");
@@ -102,7 +101,7 @@ function myMovie() {
         }
     });
 }
-
+//------- random.txt
 function randomText() {
     var fs = require("fs");
     var textFile = "random.txt";
@@ -123,7 +122,7 @@ function randomText() {
         }
     })
 }
-
+//----- Run the app based on command
 if (command === "my-tweets") {
     myTweets();
 } else if (command === "spotify-this-song") {
