@@ -12,7 +12,6 @@ function myTweets() {
     consumer_secret: authKeys.twitterKeys.consumer_secret,
     access_token_key: authKeys.twitterKeys.access_token_key,
     access_token_secret: authKeys.twitterKeys.access_token_secret
-
 });
    client.get('statuses/user_timeline', {count: 20}, function(error, tweets, response) {
         if (error) { 
@@ -22,12 +21,9 @@ function myTweets() {
             for (var i = 0; i < tweets.length; i++) {
                 console.log("-----------------------------------------------------------------------------------------------------------------------------------");
                 console.log("Tweet: " + tweets[i].text);
-                console.log("Date: " + tweets[0].created_at.substr(0,19));
+                console.log("Date: " + tweets[i].created_at.substr(0,19));
                 console.log("-----------------------------------------------------------------------------------------------------------------------------------");
             } 
-
-            // console.log(tweets[0].text);
-            // console.log(tweets[0].created_at.substr(0,19));
         }
     });
 }
@@ -51,12 +47,12 @@ function mySpotify() {
         console.log("\n\t!!! No song title requested. HERE'S ACE OF BASE !!!")
     }
         var songResult = data.tracks.items[0];
-        console.log("\n*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*\n");
+        console.log("\n*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*\n");
         console.log("\tArtist: " + songResult.artists[0].name);
         console.log("\tSong Title: " + songResult.name);
         console.log("\tPreview URL: " + songResult.preview_url);
         console.log("\tAlbum: " + songResult.album.name);
-        console.log("\n*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*\n");
+        console.log("\n*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*\n");
     });
 }
 //-------- OMDB
@@ -73,7 +69,7 @@ function myMovie() {
    
     if (input[3] == null || movieTitle == "undefined") {
             movieTitle = "mr+nobody";
-            console.log("\n\t!!! No movie title found. HERE'S MR. NOBODY !!!");
+            console.log("\n!!! No movie title found. HERE'S MR. NOBODY !!!");
      } else {
          splitMovieTitle();
          movieTitle = actualTitle.join('+').replace(/\'/g, "'");
