@@ -1,4 +1,3 @@
-var authKeys = require("./keys.js");
 var request = require('request');
 var Twitter = require('twitter');
 var Spotify = require('spotify');
@@ -7,6 +6,7 @@ var command = input[2];
 
 //---------- Twitter 
 function myTweets() {
+    var authKeys = require("./keys.js");
     var client = new Twitter({
     consumer_key: authKeys.twitterKeys.consumer_key,
     consumer_secret: authKeys.twitterKeys.consumer_secret,
@@ -110,8 +110,16 @@ function randomText() {
         if (err) {
             console.log(err);
         } else {
-            var dataArray = data.split(",").join(" ");
-            console.log("node liri.js " + dataArray + " \r");
+            var dataArray = data.split(",").join(" ").replace(/\"/g,"");
+            var exec = require('child_process').exec;
+            var cmd = 'node liri.js ' + dataArray;
+            exec(cmd, function(error, output) {
+                if (error) {
+                    console.log(error);
+                } else {
+                    console.log(output);
+                }
+});
         }
     })
 }
