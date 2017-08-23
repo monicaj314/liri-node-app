@@ -1,8 +1,14 @@
 {
   "name": "liri-node-app",
   "version": "1.0.0",
-  "description": "simple node app using twitter, spotify, and omdb",
-  "main": "liri.js",
+  "description": "",
+  "main": "keys.js",
+  "dependencies": {
+    "request": "^2.81.0",
+    "spotify": "^0.3.0",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,20 +16,10 @@
     "type": "git",
     "url": "git+https://github.com/monicaj314/liri-node-app.git"
   },
-  "keywords": [
-    "node",
-    "twitter",
-    "spotify"
-  ],
-  "author": "Monica Jones",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/monicaj314/liri-node-app/issues"
   },
-  "homepage": "https://github.com/monicaj314/liri-node-app#readme",
-  "dependencies": {
-    "request": "^2.81.0",
-    "spotify": "^0.3.0",
-    "twitter": "^1.7.0"
-  }
+  "homepage": "https://github.com/monicaj314/liri-node-app#readme"
 }
